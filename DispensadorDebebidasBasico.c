@@ -38,6 +38,12 @@ int main(){
 	switch(opc){
 		//Caso 1: Coca-Cola
 		case 1:
+		if (ingreso > 20){
+		cambio = ingreso - 20;
+		printf("\nSu cambio es %.2f$, Gracias por su compra!", cambio);
+		}
+		else if (ingreso == 20){
+
 		printf("\nUsted ha seleccionado: Coca-Cola\nTotal a pagar: 20$\nIntroduzca cantidad de dinero a pagar: ");
 		scanf("%f", &ingreso);
 		
@@ -98,8 +104,3 @@ int main(){
 	}
 	return 0;
 }
-			if (ingreso > 20){
-				cambio = ingreso - 20;
-				printf("\nSu cambio es %.2f$, Gracias por su compra!", cambio);
-			}
-			else if (ingreso == 20){
