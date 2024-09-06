@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 hacer un programa que divida una lista en mitades y que cuente los elementos.
  Este algoritmo divide recursivamente una lista en mitades y en cada division cuenta los elementos de la lista. 
@@ -6,21 +5,39 @@ hacer un programa que divida una lista en mitades y que cuente los elementos.
  y en cada paso se realiza un cuenta lineal de los elementos ****COMPRESION DE LISTAS****
 """
 
+import time
+
+def contar_elementos(lista):
+    if len(lista) == 1:
+        return 1
+    
+    # Se partea la mitad la lista
+    mitad = len(lista) // 2
+    izquierda = lista[:mitad]
+    derecha = lista[mitad:]
+    
+    # Cuenta los elementos de la lista
+    conteo_total = len(lista)
+    conteo_izquierda = contar_elementos(izquierda)
+    conteo_derecha = contar_elementos(derecha)
+    # Suma los conteos de la division
+    return conteo_total + conteo_izquierda + conteo_derecha
+
+# Compresion de listas
 lista = [i for i in range(1, 101)]
-print("--------------------------------------------------")
-print(f"Lista completa: {lista}")
-print(f"Tamaño de lista: {len(lista)}")
+print(lista)
+print("|-------------------------------------------------|")
+print(f"| Total de elementos en la lista: {len(lista)}             |")
+print("|-------------------------------------------------|")
 
-mitad = int(len(lista)/2)
-print("La mitad de la lista es: ", mitad)
-print("--------------------------------------------------")
+# Llama el conteo
+conteo_final = contar_elementos(lista)
+print(f"| Conteo total de elementos en cada paso: {conteo_final}     |")
+print("|-------------------------------------------------|")
 
-izquierda = lista[:mitad]
-derecha = lista[mitad:]
+# Medidor de tiempo
+inicio = time.time()
+fin = time.time()
 
-print("Lista izquierda: ", izquierda)
-print(f"Tamaño de lista izquierda {len(izquierda)}")
-print("--------------------------------------------------")
-print("Lista derecha: ", derecha)
-print(f"Tamaño de lista derecha: {len(derecha)}")
-print("--------------------------------------------------")
+print(f"| Tiempo de ejecución: {fin - inicio:.10f} segundos      |")
+print("|-------------------------------------------------|")
