@@ -6,7 +6,10 @@
     - Una parte ordenada
     - Una parte no ordenada
 - En cada iteracion el elemento minimo de la parte no ordenada se selecciona y se intercambia con el primer elemento de la parte no ordenada. 
-  
+
+---
+## Pseudocódigo
+
   ```pseint
     Selection_sort(arreglo):
         n <--- Tamaño arreglo
@@ -22,8 +25,8 @@
         FIN PARA RETURN ARREGLO
     FIN
   ```
-
-  #### Código en Python
+---
+  ## Código en Python
 
   ```python
   def selection_sort(arreglo):
@@ -41,3 +44,5 @@
             arreglo[i] = arreglo[min_index]
             arreglo[min_index] = aux
     return arreglo
+```
+---
