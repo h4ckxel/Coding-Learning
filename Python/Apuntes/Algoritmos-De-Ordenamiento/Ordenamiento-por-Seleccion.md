@@ -2,6 +2,32 @@
 
 ``` 18 / Septiembre / 2024 ```
 
+Las listas de Python tienen un método incorporado `list.sort()` que modifica la lista in situ. También hay una función incorporada `sorted()` que crea una nueva lista ordenada a partir de un iterable.
+
+En este documento exploramos las distintas técnicas para ordenar datos usando `Python`.
+
+Conceptos básicos de ordenación
+Una clasificación ascendente simple es muy fácil: simplemente llame a la función `sorted()`. Retorna una nueva lista ordenada:
+```python
+>>>
+sorted([5, 2, 3, 1, 4])
+[1, 2, 3, 4, 5]
+```
+También puede usar el método `list.sort()`. Modifica la lista in situ (y retorna `None` para evitar confusiones). Por lo general, es menos conveniente que `sorted()`, pero si no necesita la lista original, es un poco más eficiente.
+```python
+>>>
+a = [5, 2, 3, 1, 4]
+a.sort()
+a
+[1, 2, 3, 4, 5]
+```
+Otra diferencia es que el método `list.sort()` solo aplica para las listas. En contraste, la función `sorted()` acepta cualquier iterable.
+
+```python
+>>>
+sorted({1: 'D', 2: 'B', 3: 'B', 4: 'E', 5: 'A'})
+[1, 2, 3, 4, 5]
+```
 - Funciona dividiendo el arreglo en dos partes:
     - Una parte ordenada
     - Una parte no ordenada
@@ -46,3 +72,4 @@
     return arreglo
 ```
 ---
+***Documentación oficial sobre `sort` en la página de Python: https://docs.python.org/es/3/howto/sorting.html***
