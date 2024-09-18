@@ -17,16 +17,16 @@ def bubble_sort(arreglo):
                 arreglo[j] = aux
                 arreglo[j] = arreglo[j+1]
                 arreglo[j+1] = aux
-            print(f"Paso: {j+1}")
-            print(f"Se intercambia {arreglo[j]} por  {arreglo[j+1]}")
-            print(arreglo)
-        print()
+        #     print(f"Paso: {j+1}")
+        #     print(f"Se intercambia {arreglo[j]} por  {arreglo[j+1]}")
+        #     print(arreglo)
+        # print()
+    return arreglo
     
-    
-# arreglo ejemplo
-huarache = [7,3,9,11,1,0,8]
-print("Arreglo original: ", huarache)
+# # arreglo ejemplo
+# huarache = [7,3,9,11,1,0,8]
+# print("Arreglo original: ", huarache)
 
-# ordenar arreglo
-bubble_sort(huarache)
-print("Arreglo ordenado es: ", huarache)
+# # ordenar arreglo
+# bubble_sort(huarache)
+# print("Arreglo ordenado es: ", huarache)

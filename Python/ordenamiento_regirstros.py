@@ -40,17 +40,17 @@ def printEstudiante(estudiante):
         
 # Base de datos
 baseDeDatos = [
-              Estudiante("Rogelio", 21, 6.8),
-              Estudiante("Laura", 18, 7.8),
-              Estudiante("Luis", 22, 9.9),
-              Estudiante("Jose", 32, 5.4),
-              Estudiante("Betriz", 25, 7.7),
-              Estudiante("Richie", 22, 6.9),
-              Estudiante("Carmen", 21, 9.1),
-              Estudiante("Pedro", 21, 8.4),
-              Estudiante("El chato", 21, 7.2),
-              Estudiante("Ana", 19, 9.0),
-              ]
+            Estudiante("Rogelio", 21, 6.8),
+            Estudiante("Laura", 18, 7.8),
+            Estudiante("Luis", 22, 9.9),
+            Estudiante("Jose", 32, 5.4),
+            Estudiante("Betriz", 25, 7.7),
+            Estudiante("Richie", 22, 6.9),
+            Estudiante("Carmen", 21, 9.1),
+            Estudiante("Pedro", 21, 8.4),
+            Estudiante("El chato", 21, 7.2),
+            Estudiante("Ana", 19, 9.0),
+            ]
 print("\nLa lista de estudiantes es:\n")
 printEstudiante(baseDeDatos)
 ordenarPromedio(baseDeDatos)
