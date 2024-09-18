@@ -3,7 +3,7 @@ import time
 from bubble_sort import bubble_sort
 from selection_sort import selection_sort
 
-huarache = [random.randint(1, 10000) for _ in range(1000000)]
+huarache = [random.randint(1, 1000) for _ in range(1000000)]
 
 # ordenamiento burbuja
 inicio = time.time()
