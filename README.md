@@ -32,12 +32,11 @@ Si te interesa aprender de manera autodidacta o simplemente echar un vistazo a l
 Este repositorio está en constante evolución. A medida que continúo aprendiendo, iré añadiendo más proyectos y scripts. Mi objetivo es dominar las áreas de programación, algoritmos y desarrollo de software, y este espacio es una bitácora de ese camino.
 
 ---
+<div align="center">
 
-## 🎥 **Vista Previa en GIF**
+![Coding](https://i.pinimg.com/originals/51/4f/3f/514f3fccb71047d780be491c435a79e1.gif)
 
-![Coding](https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif)
-
-![Learning](https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif)
+</div>
 
 ---
 
