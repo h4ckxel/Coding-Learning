@@ -34,7 +34,7 @@ Este repositorio está en constante evolución. A medida que continúo aprendien
 ---
 <div align="center">
 
-![Coding](https://i.pinimg.com/originals/51/4f/3f/514f3fccb71047d780be491c435a79e1.gif)
+<img src="https://i.pinimg.com/originals/9f/b0/e9/9fb0e9a48e6b312f4725d9497d31c46a.gif">
 
 </div>
 
