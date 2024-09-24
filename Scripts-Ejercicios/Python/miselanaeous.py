@@ -22,9 +22,11 @@ print(x3)
 
 #y1 = [4*p*(x1[i] - h)**2 + k for i in range(-100, 101)]
 y2 = 4*p*(x3 - h)**2 + k
+y3 = 4*p*(x3 - h)**2 + k
 
-plt.scatter(h, k, color='black', linewidth=2)
 plt.plot(x3, y2, color='red', linewidth=4)
+plt.scatter(h, k, color='black', linewidth=2)
+plt.scatter(h, k+p, color='black', linewidth=2)
 plt.show()
 
 # numerical python
