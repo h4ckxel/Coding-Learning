@@ -2,6 +2,7 @@
 <div align="center">
 
 # 12° Simposio de Ingenieria UACM
+`23 / Septiembre / 2024`
 
 </div>
 
@@ -74,4 +75,4 @@ Las telecomunicaciones desempeñan un rol fundamental en la entrega de contenido
 
 ### **Conclusión**
 
-Este informe destaca los desarrollos actuales y los desafíos en las áreas de ciberseguridad y telecomunicaciones. Las amenazas cibernéticas continúan creciendo, y las empresas deben invertir en simulaciones y tecnologías avanzadas para defenderse adecuadamente. En el ámbito de las telecomunicaciones, la eficiencia en el manejo de grandes volúmenes de datos es crítica para garantizar transmisiones de alta calidad, especialmente en medios digitales modernos como la televisión y el streaming.
+Las amenazas cibernéticas continúan creciendo, y las empresas deben invertir en simulaciones y tecnologías avanzadas para defenderse adecuadamente. En el ámbito de las telecomunicaciones, la eficiencia en el manejo de grandes volúmenes de datos es crítica para garantizar transmisiones de alta calidad, especialmente en medios digitales modernos como la televisión y el streaming.
