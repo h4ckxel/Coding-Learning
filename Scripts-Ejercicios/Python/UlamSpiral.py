@@ -21,7 +21,6 @@ def generate_ulam_spiral(n):
     dx, dy = 0, -1
     positions = {}
 
-    # Comenzar el espiral desde el número 1
     for i in range(1, n+1):
         positions[i] = (x, y)
         if (x == y) or (x < 0 and x == -y) or (x > 0 and x == 1 - y):
@@ -48,17 +47,16 @@ def draw_spiral(batch_size):
 
         if sieve[num]:
             prime_positions.append((x, y))
-            # Marcar números primos en diagonal con azul, los demás en rojo
+            # números primos en diagonal con azul, los demás en rojo
             if is_on_diagonal(x, y):
-                ax.plot(x, y, 'bo')  # Puntos en la diagonal en azul
+                ax.plot(x, y, 'bo')  # puntos en la diagonal en azul
             else:
-                ax.plot(x, y, 'ro')  # Otros números primos en rojo
+                ax.plot(x, y, 'ro') 
         else:
-            ax.plot(x, y, 'go', markersize=2)  # Los demás números en verde pequeño
+            ax.plot(x, y, 'go', markersize=2)  # los demás números en verde pequeño
         
         current_step += 1
 
-    # Dibujar una línea conectando todos los números primos
     if len(prime_positions) > 1:
         prime_positions = np.array(prime_positions)
         ax.plot(prime_positions[:, 0], prime_positions[:, 1], 'g-', linewidth=1)
@@ -71,7 +69,7 @@ def update_spiral():
     draw_spiral(batch_size)
     
     if current_step <= max_steps:
-        root.after(30, update_spiral)  # Velocidad de actualización controlada en 30 ms
+        root.after(30, update_spiral)  # controlador de velocidad
 
 def start_spiral():
     global is_paused
@@ -86,7 +84,7 @@ def reset_spiral():
     global current_step, is_paused
     is_paused = True
     current_step = 1
-    ax.cla()  # Limpiar la gráfica
+    ax.cla()  
     canvas.draw()
 
 def zoom(event):
@@ -106,7 +104,7 @@ def start_pan(event):
 
 def pan(event):
     """Función para navegar por la gráfica (pan)."""
-    dx = (event.x - start_x) / 100  # Ajuste de la velocidad del desplazamiento
+    dx = (event.x - start_x) / 100  # velocidad del desplazamiento
     dy = (event.y - start_y) / 100
 
     ax.set_xlim(ax.get_xlim() - dx)
@@ -116,12 +114,12 @@ def pan(event):
 def add_text():
     """Añade un texto explicativo sobre la espiral de Ulam."""
     info_text = ("La espiral de Ulam: \n"
-                 "Colocando los números naturales en una espiral y \n"
-                 "marcando los números primos, se revelan patrones diagonales. \n\n"
-                 "Dato curioso: la espiral de Ulam fue descubierta por \n"
-                 "Stanislaw Ulam en 1963 mientras se aburría en una reunión. \n"
-                 "Este fenómeno sigue siendo un misterio matemático.\n\n"
-                 "Creado por h4ckxel")
+                "Colocando los números naturales en una espiral y \n"
+                "marcando los números primos, se revelan patrones diagonales. \n\n"
+                "Dato curioso: la espiral de Ulam fue descubierta por \n"
+                "Stanislaw Ulam en 1963 mientras se aburría en una reunión. \n"
+                "Este fenómeno sigue siendo un misterio matemático.\n\n"
+                "Creado por h4ckxel")
     text_widget.config(state=tk.NORMAL)
     text_widget.delete("1.0", tk.END)
     text_widget.insert(tk.END, info_text)
@@ -137,36 +135,32 @@ def add_text():
     label.image = ulam_photo  # Guardar referencia para que no sea recolectado por el garbage collector
     label.pack(side=tk.BOTTOM, pady=10)'''
 
-# Configuración de la ventana principal
+# ventana principal
 root = tk.Tk()
 root.title("Espiral de Ulam con Primos Conectados")
 
-# Marco principal
+# marco principal
 frame = ttk.Frame(root)
 frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
-# Configuración de Matplotlib
+# matplotlib
 fig, ax = plt.subplots(figsize=(6, 6))
 ax.set_aspect('equal')
-
-# Crear un canvas para colocar la gráfica
 canvas = FigureCanvasTkAgg(fig, master=frame)
 canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
-# Habilitar zoom y navegación (pan) con el ratón
 canvas.get_tk_widget().bind("<MouseWheel>", zoom)
 canvas.get_tk_widget().bind("<ButtonPress-1>", start_pan)
 canvas.get_tk_widget().bind("<B1-Motion>", pan)
 
-# Configurar el área de texto a la derecha de la gráfica
 text_frame = ttk.Frame(root)
 text_frame.pack(side=tk.RIGHT, fill=tk.Y, padx=10)
 
 text_widget = tk.Text(text_frame, width=40, height=20, wrap=tk.WORD, padx=10, pady=10)
 text_widget.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-text_widget.config(state=tk.DISABLED)  # El texto será solo de lectura
+text_widget.config(state=tk.DISABLED) 
 
-# Botones de control
+# botones de control
 control_frame = ttk.Frame(root)
 control_frame.pack(side=tk.TOP, pady=10)
 
@@ -179,20 +173,16 @@ pause_button.pack(side=tk.LEFT, padx=5)
 reset_button = ttk.Button(control_frame, text="Reiniciar Espiral", command=reset_spiral)
 reset_button.pack(side=tk.LEFT, padx=5)
 
-# Añadir el texto explicativo y la imagen de Ulam
 add_text()
 #add_ulam_image()
 
-# Ajustar el diseño de los puntos en la espiral
-max_steps = 10000  # Máximo de números a mostrar en la espiral
+max_steps = 10000  # máximo de números a mostrar en la espiral
 current_step = 1
-batch_size = 50  # Número de puntos a procesar en cada actualización para mejorar la fluidez
+batch_size = 50  
 is_paused = False
 
-# Generamos las posiciones de la espiral solo una vez
 spiral_positions = generate_ulam_spiral(max_steps)
 
-# Generamos la criba de Eratóstenes solo una vez para todos los números
 sieve = sieve_of_eratosthenes(max_steps)
 
 root.mainloop()
