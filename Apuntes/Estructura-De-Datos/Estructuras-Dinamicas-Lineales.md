@@ -96,47 +96,29 @@ pila.peek()
 pila.pop()
 pila.peek()
 ```
-`
+```
 >>>
 Agregando Jenny Rivera a la cima de la pila
-
 Agregando El peje a la cima de la pila        
-
 Agregando Vladimir Putin a la cima de la pila 
-
 Imprimiendo la Pila: 
-
 Vladimir Putin,
-
 El peje,
-
 Jenny Rivera,
-
 Desapilar Vladimir Putin
-
 Imprimiendo la Pila: 
-
 El peje,
-
 Jenny Rivera,
-
 Agregando Leon S. Kennedy a la cima de la pila
-
 Imprimiendo la Pila: 
-
 Leon S. Kennedy,
-
 El peje,
-
 Jenny Rivera,
-
 Desapilar Leon S. Kennedy
-
 Imprimiendo la Pila: 
-
 El peje,
-
-Jenny Rivera,`
+Jenny Rivera,
+```
 
 
 
