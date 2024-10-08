@@ -1,4 +1,4 @@
-def quicksort(arr):
+def quicksort(arreglo):
     if len(arr) <= 1:
         return arr
 
