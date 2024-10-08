@@ -41,6 +41,14 @@ Existe un ***Nodo Superior***
 
 Cuando se crea una ***instancia*** de la pila no se deben enviar argumentos, ya que la misma pila ya inicializa con el nodo superior vacio. 
 
+---
+
+## Ejemplo
+
+```python
+
+```
+
 
 
 
