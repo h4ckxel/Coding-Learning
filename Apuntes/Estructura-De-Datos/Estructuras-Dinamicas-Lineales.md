@@ -1,4 +1,5 @@
 # Estructuras Dinámicas lineales
+###### `8 de Octubre del 2024`
 - Listas
 - Pilas
 - Colas
