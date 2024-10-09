@@ -18,7 +18,7 @@ El elemento agregado siempre será el elemento trasero.
 Eliminar un elemento de la cola se le conoce como "***dequeue***" -> Eliminar/Borrar el frontal (el que esta al inicio)
 
 > [!NOTE]
-> solo se puede eliminar el frontal
+> Solo se puede eliminar el frontal
 
 #### Implementación
 1. Definimos una clase cola.
