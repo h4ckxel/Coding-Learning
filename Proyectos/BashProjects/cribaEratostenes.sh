@@ -1,17 +1,17 @@
 #!/bin/bash
 
-# Función para implementar la Criba de Eratóstenes
+# funcion de la Criba
 criba_eratostenes() {
     local limite=$1
     local i j
 
-    # Inicializar el array de números primos
+    # array de numeros primos
     local -a primos
     for ((i=2; i<=limite; i++)); do
         primos[i]=1
     done
 
-    # Aplicar la criba
+    # se aplica criba
     for ((i=2; i*i<=limite; i++)); do
         if [ ${primos[i]} -eq 1 ]; then
             for ((j=i*i; j<=limite; j+=i)); do
@@ -20,7 +20,7 @@ criba_eratostenes() {
         fi
     done
 
-    # Imprimir los números primos
+    # impresion de numeros primos
     echo "Números primos hasta $limite:"
     for ((i=2; i<=limite; i++)); do
         if [ ${primos[i]} -eq 1 ]; then
@@ -30,11 +30,11 @@ criba_eratostenes() {
     echo
 }
 
-# Verificar que se ha proporcionado un argumento
+# verificacion del argumento dado por el usuario
 if [ $# -eq 0 ]; then
     echo "Uso: $0 <limite>"
     exit 1
 fi
 
-# Llamar a la función con el límite proporcionado
+# llamar la funcion con el limite que digito el usuario
 criba_eratostenes $1

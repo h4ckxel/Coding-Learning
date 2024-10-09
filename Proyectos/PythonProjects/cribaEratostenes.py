@@ -1,16 +1,16 @@
-# Función para implementar la Criba de Eratóstenes
+# funcion de la criba
 def criba_eratostenes(limite):
-    # Inicializar el array de números primos
+    # array de números primos
     primos = [True] * (limite + 1)
     primos[0] = primos[1] = False  # 0 y 1 no son primos
 
-    # Aplicar la criba
+    # criba
     for i in range(2, int(limite**0.5) + 1):
         if primos[i]:
             for j in range(i * i, limite + 1, i):
                 primos[j] = False
 
-    # Imprimir los números primos
+    # impresion de numeros primos
     print(f"Números primos hasta {limite}:")
     for i in range(2, limite + 1):
         if primos[i]:
@@ -18,7 +18,7 @@ def criba_eratostenes(limite):
     print()
 
 
-# Pedir al usuario que ingrese un límite
+# se pide al usuario que ingrese un limite
 try:
     limite = int(input("Ingresa un número límite: "))
     if limite < 2:

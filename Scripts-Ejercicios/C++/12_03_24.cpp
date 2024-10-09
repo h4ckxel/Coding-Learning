@@ -1,5 +1,5 @@
 //============================================================================
-// Name        : 12_03_24.cpp
+// Name        : POO-Ejercicio.cpp
 // Author      : Acxel Martin Elizalde Camacho
 // Version     :
 // Copyright   : Your copyright notice
