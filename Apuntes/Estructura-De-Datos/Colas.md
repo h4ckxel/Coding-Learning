@@ -43,3 +43,16 @@ class Cola:
             rase IndexError("Cola vacia")
         return self.items(0)
 ```
+
+---
+
+### Practica tema 4.
+Implementa una cola para gestionar una sala de espera en un consultorio médico. Cada paciente tiene un nombre y una hora de llegada. El objetivo es permitir al usuario añadir pacientes a la cola, ver al siguietne en la cola, y atender al paciente.
+
+> [!IMPORTANT]
+> Pasos:
+> 1. Implementa la clase "***cola***" en metodos encoar, desencolar, peek, is_empty.
+> 2. Cada paciente debe ser un objeto con un nombre y una hora de llegada.
+
+>[!TIP]
+Crear una clase paciente que tenga como parametros "Nombre, hora de llegada". La funcion peek hara trabajo en estos dos.
