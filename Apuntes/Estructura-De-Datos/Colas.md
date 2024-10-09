@@ -20,6 +20,8 @@ Eliminar un elemento de la cola se le conoce como "***dequeue***" -> Eliminar/Bo
 > [!NOTE]
 > Solo se puede eliminar el frontal
 
+---
+
 #### Implementación
 1. Definimos una clase cola.
 2. Definimos una lista vacia, que almacenará los elementos de la lista.
@@ -42,6 +44,31 @@ class Cola:
         if is_empty():
             rase IndexError("Cola vacia")
         return self.items(0)
+
+# ejemplo de uso
+cola = Cola()
+print(cola.is_empty())
+cola.encolar(1)
+cola.encolar(2)
+cola.encolar(3)
+print(cola.peek())
+print(f"Desencolar: {cola.peek()}")
+print(cola.desencolar())
+print(cola.peek())
+print("Encolando: 4")
+cola.encolar(4)
+print(f"Imprimiendo la cola: \n{cola.items}")
+```
+### ***>>>*** 
+```
+True
+1
+Desencolar: 1        
+1
+2
+Encolando: 4
+Imprimiendo la cola: 
+[2, 3, 4]
 ```
 
 ---
