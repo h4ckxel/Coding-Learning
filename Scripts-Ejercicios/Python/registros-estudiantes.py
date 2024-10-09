@@ -11,16 +11,16 @@ class Estudiante:
         self.edad = edad
         self.promedio = promedio
         
-# Crear un registro de un estudiante
+# se crea un registro de un estudiante
 estudiante1 = Estudiante("Pancho", 21, 9.6)
 
-# Acceder a los campos del registro
+# se acceden a los campos del registro
 print(f"Nombre: {estudiante1.nombre}")
 print(f"Edad: {estudiante1.edad}")
 print(f"Promedio: {estudiante1.promedio}")
 
 print("--------------------------------")
-# Modificar el valor de un campo
+# modificacion del valor de un campo
 estudiante1.promedio = 6        
 print(f"Nombre: {estudiante1.nombre}")
 print(f"Edad: {estudiante1.edad}")
