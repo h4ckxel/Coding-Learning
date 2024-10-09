@@ -9,66 +9,66 @@ import numpy as np
 import math
 import pandas as pd
 
-# Definimos la función y su derivada
-funcionx = lambda x: x**3 + 3*x**2 - 1 # f(x) = x - cos(x)
-derivada_funcionx = lambda x: 3*x**2 + 6*x # f'(x) = 1 + sin(x)
+# definimos la función y su derivada
+funcionx = lambda x: x**3 + 3*x**2 - 1  # f(x) = x^3 + 3x^2 - 1
+derivada_funcionx = lambda x: 3*x**2 + 6*x  # f'(x) = 3x^2 + 6x
 
-# Función para convertir las entradas en valores numéricos (reconoce "pi")
+# función para convertir las entradas a valores numéricos (reconoce "pi")
 def convertir_entrada(entrada):
-    # Reemplaza "pi" por "math.pi" y evalúa la expresión
+    # reemplaza "pi" por "math.pi" y evalúa la expresión
     return eval(entrada.replace("pi", "math.pi"))
 
-# Solicita el número de intervalos al usuario
-num_intervalos = int(input("Número de intervalos a analizar: "))
-intervalos = []  # Almacena los intervalos
+# solicita el número de intervalos al usuario
+num_intervalos = int(input("número de intervalos a analizar: "))
+intervalos = []  # almacena los intervalos ingresados
 
-# Solicita cada intervalo en el formato 'a b'
+# solicita cada intervalo en el formato 'a b'
 for i in range(num_intervalos):
-    intervalo = input(f"Intervalo {i+1} en formato 'a b' (ejemplo: -pi 2, pi 3*pi/2): ")
-    # Separa la entrada y convierte cada parte usando la función `convertir_entrada`
-    a, b = map(convertir_entrada, intervalo.split())  # Convierte los valores en float con pi
-    intervalos.append([a, b])  # Guarda cada intervalo como [a, b]
+    intervalo = input(f"intervalo {i+1} en formato 'a b' (ejemplo: -pi 2, pi 3*pi/2): ")
+    # convierte cada parte del intervalo a un valor numérico usando `convertir_entrada`
+    a, b = map(convertir_entrada, intervalo.split())
+    intervalos.append([a, b])  # guarda el intervalo como [a, b]
 
-# Precisión (potencia de diez)
-potenciaDeDiez = float(input("Valor de la exactitud (ejemplo, 1e-5): "))  # 1e-5 = 10^-5
-tabla = []  # Almacena los resultados de la tabla
+# solicita la precisión (potencia de diez)
+potenciaDeDiez = float(input("valor de la exactitud (ejemplo, 1e-5): "))
+tabla = []  # almacena los resultados en forma de tabla
 
-# Aplicamos el método de Newton-Raphson para cada intervalo
+# aplica el método de newton-raphson para cada intervalo
 for intervalo in intervalos:
-    a, b = intervalo  # Desempaquetamos los límites del intervalo
-    punto_inicial = (a + b) / 2  # Usamos el punto medio como punto inicial
+    a, b = intervalo  # desempaqueta los límites del intervalo
+    punto_inicial = (a + b) / 2  # usa el punto medio como punto inicial
     x_n = punto_inicial
-    i = 1  # Inicializamos el contador de iteraciones
+    i = 1  # inicializa el contador de iteraciones
     
-    print(f"------------------------------------------------\nIntervalo: [{a}, {b}]\nPunto inicial: {punto_inicial}")
+    print(f"------------------------------------------------\nintervalo: [{a}, {b}]\npunto inicial: {punto_inicial}")
     
     while True:
-        f_xn = funcionx(x_n)  # Calcula f(x_n)
-        f_prime_xn = derivada_funcionx(x_n)  # Calcula f'(x_n)
+        f_xn = funcionx(x_n)  # calcula f(x_n)
+        f_prime_xn = derivada_funcionx(x_n)  # calcula f'(x_n)
 
-        # Evitar división por cero
+        # verifica que la derivada no sea cero para evitar errores de división
         if f_prime_xn == 0:
-            print(f"La derivada se anuló en x = {x_n}, no se puede continuar.\n------------------------------------------------")
+            print(f"la derivada se anuló en x = {x_n}, no se puede continuar.\n------------------------------------------------")
             break
 
-        # Calcula el siguiente punto usando la fórmula de Newton-Raphson
+        # calcula el siguiente punto usando la fórmula de newton-raphson
         x_n1 = x_n - (f_xn / f_prime_xn)
 
-        # Guarda la información de la iteración en la tabla
+        # guarda la información de la iteración en la tabla
         tabla.append([i, a, b, x_n, f_xn, f_prime_xn, x_n1])
 
-        # Comprueba si la diferencia es menor que la precisión deseada
+        # comprueba si la diferencia entre iteraciones es menor que la precisión deseada
         if abs(x_n1 - x_n) < potenciaDeDiez:
-            print(f"Convergencia alcanzada después de {i} iteraciones.\nRaíz aproximada: {x_n1}\n------------------------------------------------")
+            print(f"convergencia alcanzada después de {i} iteraciones.\nraíz aproximada: {x_n1}\n------------------------------------------------")
             break
 
-        # Actualiza x_n para la siguiente iteración
+        # actualiza x_n para la siguiente iteración
         x_n = x_n1
         i += 1
 
-# Crear un DataFrame con la tabla de resultados
-df = pd.DataFrame(tabla, columns=["Iteración", "Intervalo a", "Intervalo b", "x_n", "f(x_n)", "f'(x_n)", "x_n+1"])
+# crea un dataframe con la tabla de resultados
+df = pd.DataFrame(tabla, columns=["iteración", "intervalo a", "intervalo b", "x_n", "f(x_n)", "f'(x_n)", "x_n+1"])
 
-# Guardar la tabla en un archivo Excel
+# guarda la tabla en un archivo excel
 df.to_excel("resultado_newton_raphson_intervalos.xlsx", index=False, engine='openpyxl')
-print("Nombre del archivo 'resultado_newton_raphson_intervalos.xlsx'")
+print("archivo guardado con el nombre 'resultado_newton_raphson_intervalos.xlsx'")
