@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Oct 10 08:54:06 2024
+
+@author: Lenovo
+"""
+
 # clase cola para gestionar la sala de espera
 class Cola:
     def __init__(self):
@@ -60,11 +67,10 @@ def main():
 
         elif opcion == 2:
             # muestro al siguiente paciente que será atendido
-            try:
-                siguiente = sala_espera.peek()
-                print(f"\nSiguiente paciente: {siguiente.nombre}, hora de llegada: {siguiente.hora_llegada}")
-            except IndexError as e:
-                print(e)
+            if sala_espera.is_empty():
+                print("No hay pacientes en la sala de espera")
+            siguiente = sala_espera.peek()
+            print(f"EL siguiente paciente es: {siguiente.nombre}")
 
         elif opcion == 3:
             # atiendo al paciente frontal de la cola
