@@ -85,4 +85,4 @@ Implementa una cola para gestionar una sala de espera en un consultorio médico.
 Crear una clase paciente que tenga como parametros "Nombre, hora de llegada". La funcion peek hara trabajo en estos dos.
 
 - [x] Crear clase Paciente con atributos nombrw y hora de llegada
-- [ ] Usar metodos de Colas
+- [x] Usar metodos de Colas
