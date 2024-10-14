@@ -13,5 +13,5 @@ def info(Student):
     print(f"Age: {Student.age}")
     print(f"Career: {Student.career}")
 
-student = Student("Acxel", 23, "Software Engineering")
+student = Student("Acxel", 21, "Software Engineering")
 info(student)
