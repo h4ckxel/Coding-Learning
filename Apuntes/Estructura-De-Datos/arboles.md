@@ -89,8 +89,23 @@ Para ello se necesitan de dos operaciones más.
 ### Rotaciones
 Sucede cunado al agregarle o quitarle un elemento a un AVL, se desbalancea.
 
+### Recorridos
+Motivacion:
 
+Una tarea comun a realizar con un arbol es ejecutar algun tipo de operacio con cada uno de los elementos.
 
+Esta operaion es un parametro de una tarea mas general ---> recorrido
+
+#### Recorridos Básicos
+
+1. Recorrido por amplitud: Recorre el árbol por niveles desde el nivel superior al inferior.
+>[!NOTE]
+***Siempre recorre de izquierda a derecha.***
+
+2. Recorrido en profundidad: Recorre el árbol por subárboles.
+   - Preorder
+   - Inorder --> orden central
+   - Postorder 
 
 
 
