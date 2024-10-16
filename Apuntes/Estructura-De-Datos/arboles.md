@@ -42,4 +42,63 @@ Un arbol se define por:
 1. Árbol generico: No hay restricciones en su estructura.
 2. Árbol binario: Cada nodo tiene a lo mas dos nodos.
    1. izquierdo <---- hijos ----> derecho
-3. 
+3. Árbol equilibrado (***tambien es un árbol binario***): Todas las hojas estan como maximo un nivel de diferencia
+4. Árbol completo: es árbol equilibrado y ademas las hojasdel ultimo nivel estan a lo mas a la izquierda posible.
+5. Árbol lleno: Árbol completo y ademas tiene las hojas del ultimo nivel.
+
+---
+
+### Operaciones
+En general:
+
+  * Create() ----> Árbol ----> Devuelve un árbol vacio. (intanciar un arbol de la clase arbol)
+  * Add(Element) ----> Árbol ----> Devuelve un árbol al agregar un elemento
+  * Remove() ----> Árbol ----> Devuelve un árbol despues de borrar un elemento
+
+### Árboles Binarios Balanceados (**ABB**)
+
+Árboles AVL:
+
+Balanceado; para cada nodo se tiene que cumplir que:
+   - **B < A < C** 
+   - Como programar un árbol binario balanceado.
+
+Se llama AVL si cumple las siguientes caracteristicas:
+
+* Para cada nodo, la diferencia de alturas entre sus subárboles izquierdo y derecho (***factor de balanceo***) no puede ser mayor a 1.
+* Las operaciones de inserción y eliminación requieren _rotaciones_ para mantener el balance.
+
+### Operaciones AVL
+
+  * Create() ----> Árbol ----> Devuelve un árbol vacio. (intanciar un arbol de la clase arbol)
+  * Add(Element) ----> Árbol ----> Devuelve un árbol al agregar un elemento
+  * Remove() ----> Árbol ----> Devuelve un árbol despues de borrar un elemento
+
+#### Operacionesde recorrido
+* Preorder()
+* Inorder()
+* Postorder()
+
+El problema radica al momento de agregar/remover elementos -> es probable que se desbalanceé.
+
+Para ello se necesitan de dos operaciones más.
+
+* rotateLeft() ----> Árbol ----> Devuelve un árbol rotado a la izquierda
+* rotateRight() ----> Árbol ----> Devuelve un árbol rotado a la derecha
+
+### Rotaciones
+Sucede cunado al agregarle o quitarle un elemento a un AVL, se desbalancea.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
