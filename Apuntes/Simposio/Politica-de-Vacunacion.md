@@ -4,7 +4,7 @@
 
 ---
 
-* Iden Causas de la enfermedad
+* Iden causas de la enfermedad
 * Ext de la enfermedad
 * Estudiar a naturaleza de la enfermedad
 
