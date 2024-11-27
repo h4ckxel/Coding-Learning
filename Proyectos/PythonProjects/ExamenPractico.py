@@ -6,6 +6,24 @@ hacer un programa que divida una lista en mitades y que cuente los elementos.
 """
 
 import time
+import tkinter as tk
+
+class Conversion:
+    def __init__(self, m, ha, km, ft, yd, ac):
+        self.m = metros
+        self.ha = hectareas
+        self.km = kilometros
+        self.ft = pies
+        self.yd = yardas
+        self.ac = acres
+    
+    def m_ha():
+        """ Conversion de metros cuadrados a areas """
+        print("Metros cuadrados: ")
+        print(f"La cantidad en hectareas: {m*ha}")
+
+
+
 
 def contar_elementos(lista):
     if len(lista) == 1:
