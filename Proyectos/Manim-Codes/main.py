@@ -1,55 +1,84 @@
 from manim import *
 
-class QuantumSuperposition(Scene):
+class EcuacionDeSchrodinger(Scene):
     def construct(self):
-        # titulo
-        title = Text("Superposición Cuántica y Colapso de la Función de Onda", font_size=32)
-        self.play(Write(title))
+        # Título de la escena
+        titulo = Tex("Ecuación de Schrödinger", font_size=48)
+        self.play(Write(titulo))
         self.wait(2)
-        self.play(FadeOut(title))
+        self.play(FadeOut(titulo))
 
-        # representación de la partícula cuántica
-        particle = Dot(color=BLUE).scale(2)
-        particle_label = Text("Partícula Cuántica", font_size=24).next_to(particle, DOWN)
+        # Ecuación de Schrödinger dependiente del tiempo
+        ecuacion = MathTex(
+            r"i\hbar \frac{\partial}{\partial t} \Psi(x, t) = \hat{H} \Psi(x, t)",
+            font_size=40
+        )
+        ecuacion.shift(UP * 2)
 
-        # partícula
-        self.play(FadeIn(particle), Write(particle_label))  # Paréntesis corregido aquí
+        # Explicación de la ecuación
+        explicacion = Tex(
+            r"Donde:",
+            r"$\Psi(x, t)$ es la función de onda,",
+            r"$\hat{H}$ es el operador Hamiltoniano,",
+            r"$i$ es la unidad imaginaria,",
+            r"$\hbar$ es la constante reducida de Planck.",
+            font_size=30
+        )
+        explicacion.arrange(DOWN, aligned_edge=LEFT)
+        explicacion.next_to(ecuacion, DOWN, buff=1)
+
+        # Mostrar la ecuación y su explicación
+        self.play(Write(ecuacion))
         self.wait(1)
+        for linea in explicacion:
+            self.play(Write(linea))
+            self.wait(0.5)
 
-        # superposición
-        superposition_text = Text("La partícula está en una superposición de estados", font_size=24).to_edge(UP)
-        self.play(Write(superposition_text))
+        # Representación de la función de onda
+        axes = Axes(
+            x_range=[-4, 4, 1],
+            y_range=[-2, 2, 1],
+            axis_config={"color": BLUE}
+        )
+        axes_labels = axes.get_axis_labels(x_label="x", y_label=r"\Psi(x, t)")
+
+        # Función de onda inicial (un paquete de onda gaussiano)
+        def funcion_de_onda(x, t=0):
+            return np.exp(-(x - t)**2) * np.cos(2 * PI * (x - t))
+
+        # Gráfica de la función de onda
+        grafica = axes.plot(lambda x: funcion_de_onda(x, 0), color=YELLOW)
+        grafica_label = MathTex(r"\Psi(x, 0)", font_size=30).next_to(grafica, UP)
+
+        # Mostrar los ejes y la función de onda
+        self.play(Create(axes), Write(axes_labels))
+        self.play(Create(grafica), Write(grafica_label))
         self.wait(2)
 
-        # estados posibles (|0⟩ y |1⟩)
-        state_0 = Dot(color=RED).shift(LEFT * 3)
-        state_1 = Dot(color=GREEN).shift(RIGHT * 3)
-        state_0_label = MathTex(r"|0\rangle", font_size=24).next_to(state_0, DOWN)
-        state_1_label = MathTex(r"|1\rangle", font_size=24).next_to(state_1, DOWN)
+        # Animación de la evolución temporal
+        tiempo = ValueTracker(0)
+        grafica.add_updater(
+            lambda m: m.become(
+                axes.plot(lambda x: funcion_de_onda(x, tiempo.get_value()), color=YELLOW)
+            )
+        )
 
-        # estados posibles (show)
-        self.play(FadeIn(state_0), Write(state_0_label))
-        self.play(FadeIn(state_1), Write(state_1_label))
+        # Texto para indicar la evolución temporal
+        tiempo_texto = MathTex(r"t = 0", font_size=30).to_edge(DOWN)
+        tiempo_texto.add_updater(lambda m: m.become(MathTex(fr"t = {tiempo.get_value():.2f}", font_size=30)))
+
+        self.add(tiempo_texto)
+        self.play(tiempo.animate.set_value(4), run_time=8, rate_func=linear)
         self.wait(2)
 
-        # superposición como una onda que conecta los dos estados
-        wave = CurvedArrow(state_0.get_center(), state_1.get_center(), angle=-TAU/4, color=YELLOW)
-        self.play(Create(wave))
-        self.wait(2)
-
-        # colapso de la función de onda
-        collapse_text = Text("Al medir, la partícula colapsa a uno de los estados", font_size=24).to_edge(UP)
-        self.play(ReplacementTransform(superposition_text, collapse_text))
-        self.wait(2)
-
-        # colapso a uno de los estados (ejemplo, |0⟩)
-        self.play(particle.animate.move_to(state_0.get_center()), FadeOut(wave))
-        self.wait(2)
-
-        # resultado de la medición
-        result_text = MathTex(r"\text{Resultado de la medición: } |0\rangle", font_size=32)
-        self.play(Write(result_text))
+        # Conclusión
+        conclusion = Tex(
+            "La ecuación de Schrödinger describe cómo evoluciona la función de onda en el tiempo.",
+            font_size=30
+        )
+        conclusion.to_edge(DOWN)
+        self.play(Write(conclusion))
         self.wait(3)
 
-        # escena limpia
+        # Limpiar la escena
         self.play(*[FadeOut(mob) for mob in self.mobjects])
