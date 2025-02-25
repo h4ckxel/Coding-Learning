@@ -1,0 +1,22 @@
+##[pylyzer] failed /home/h4ckxel/Desktop/Coding-Learning/Scripts-Ejercicios/Python/Organizacion_De_Productos.py 1740372119 1740
+.Producto: ClassType
+.Producto.nombre: Never
+.Producto.precio: Never
+.Producto.__call__: (nombre: Obj := Obj, precio: Obj := Obj) -> Organizacion_De_Productos.Producto
+
+.ordenarPrecio: (productos: Structural({.__len__ = (self: Never) -> Nat; .__getitem__ = (self: Obj, Int) -> Organizacion_De_Productos.Producto and (self: Obj, Obj) -> Organizacion_De_Productos.Producto}) := {global::GenericList} and Structural({.__len__ = (self: Never) -> Nat; .__getitem__ = (self: Obj, Int) -> Organizacion_De_Productos.Producto and (self: Obj, Obj) -> Organizacion_De_Productos.Producto})) -> NoneType
+.convertir: (productos: global::Iterable(Never) := global::Iterable(Never)) -> global::List!(Never, 0)
+.Super: ClassType
+.Super.__call__: () -> Organizacion_De_Productos.Super
+.Super.printProductos: (productos: global::Iterable(Structural({.nombre = Never; .precio = Never})) := global::Iterable(Structural({.nombre = Never; .precio = Never}))) -> NoneType
+.Super.comprar: (productos: global::Iterable(Structural({.precio = Nat})) := global::Iterable(Structural({.precio = Nat}))) -> Nat
+
+.baseDeDatos: global::List!(Organizacion_De_Productos.Producto, 6)
+
+
+
+
+
+
+
+

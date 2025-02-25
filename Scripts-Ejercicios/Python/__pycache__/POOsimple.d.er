@@ -1,0 +1,15 @@
+##[pylyzer] failed /home/h4ckxel/Desktop/Coding-Learning/Scripts-Ejercicios/Python/POOsimple.py 1740372119 425
+.Person: ClassType
+.Person.age: Never
+.Person.name: Never
+.Person.__call__: (name: Obj, age: Obj) -> POOsimple.Person
+
+.Student: ClassType
+POOsimple = pyimport "POOsimple"
+.Student <: .Person
+.Student.career: Never
+.Student.__call__: (name: Obj, age: Obj, career: Obj) -> POOsimple.Student
+
+.info: ({POOsimple.Student}) -> NoneType
+.student: .Student
+

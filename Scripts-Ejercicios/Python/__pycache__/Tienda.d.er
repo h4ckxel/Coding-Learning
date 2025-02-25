@@ -1,0 +1,35 @@
+##[pylyzer] failed /home/h4ckxel/Desktop/Coding-Learning/Scripts-Ejercicios/Python/Tienda.py 1740372119 3929
+
+.Cliente: ClassType
+.Cliente.nombre: Never
+.Cliente.productos: Never
+.Cliente.siguiente: Never
+.Cliente.__call__: (nombre: Obj) -> Tienda.Cliente
+
+.Cola: ClassType
+.Cola.items: Never
+.Cola.__call__: () -> Tienda.Cola
+.Cola.is_empty: (self: Tienda.Cola) -> {.len(.self.items) in {0}}
+.Cola.encolar: (self: Tienda.Cola, cliente: Obj) -> NoneType
+.Cola.desencolar: (self: Tienda.Cola) -> Never
+.Cola.peek: (self: Tienda.Cola) -> Never
+.Cola.size: (self: Tienda.Cola) -> NoneType
+
+.Pila: ClassType
+.Pila.superior: Never
+.Pila.__call__: () -> Tienda.Pila
+.Pila.push: (self: Tienda.Pila, dato: Obj) -> NoneType
+.Pila.pop: (self: Tienda.Pila) -> Never
+.Pila.is_empty: (self: Tienda.Pila) -> {.self.superior in {None}}
+.Pila.size: (self: Tienda.Pila) -> Nat
+
+.Nodo: ClassType
+.Nodo.dato: Never
+.Nodo.siguiente: Never
+.Nodo.__call__: (dato: Obj) -> Tienda.Nodo
+
+.main: () -> NoneType
+
+
+
+

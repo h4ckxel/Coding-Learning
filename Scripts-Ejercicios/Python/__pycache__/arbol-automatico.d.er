@@ -1,0 +1,7 @@
+##[pylyzer] failed /home/h4ckxel/Desktop/Coding-Learning/Scripts-Ejercicios/Python/arbol-automatico.py 1740372119 1331
+.build_tree: |T: Type, K :> {0}, Self <: global::Indexable(K, V) and global::Iterable(T) and Structural({.__len__ = (self: Never) -> Nat}), V: Type|(data: Self, depth: {0} := {0} and {0}) -> global::Tuple([global::Tuple([Obj, Obj]), global::Tuple([Obj, Obj])])
+.classify: |Type_108: Type, R :> Nat, Type_109 <: Structural({.__lt__ = (self: Never, R) -> Bool})|(tree: Type_108, index: Type_109) -> Type_108
+.data: global::List!({"class1", "class2"}, 4)
+.decision_tree: Never
+.result: global::Tuple([global::Tuple([Obj, Obj]), Never])
+
