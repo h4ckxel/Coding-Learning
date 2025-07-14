@@ -45,11 +45,7 @@ class Paciente:
         self.nombre = nombre
         self.hora_llegada = hora_llegada
 
-def main():
-    sala_espera = Cola()  # creo una cola para la sala de espera
-
-    while True:
-        print("\n1. Agregar paciente")
+def main(): sala_espera = Cola()  # creo una cola para la sala de espera while True: print("\n1. Agregar paciente")
         print("2. Ver siguiente paciente")
         print("3. Atender paciente")
         print("4. Ver todos los pacientes en espera")
