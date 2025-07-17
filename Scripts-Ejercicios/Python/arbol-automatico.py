@@ -26,6 +26,7 @@ def classify(tree, index):
         else:
             node = node[1]  # ir por la rama derecha
     return node
+    
 
 # ejemplo de uso
 data = ['class1', 'class1', 'class2', 'class2']  # datos simulados con dos clases
