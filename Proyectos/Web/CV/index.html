@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" {IF CLASSES}class="classes"{/IF}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acxel - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Matrix Rain Background Canvas -->
+    <canvas id="matrix-canvas" class="matrix-canvas"></canvas>
+
+    <!-- Scanlines Overlay -->
+    <div class="scanlines-overlay">
+      <div class="scanline"></div>
+    </div>
+
+    <!-- Grid Pattern Overlay -->
+    <div class="grid-overlay"></div>
+
+    <!-- Main Container -->
+    <main class="main-container">
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="hero-content">
+          <!-- Left Side - Avatar and Info -->
+          <div class="hero-left">
+            <!-- Avatar -->
+            <div class="avatar-container">
+              <div class="avatar-outer-ring">
+                <div class="avatar-inner">
+                  <div class="avatar-face">
+                    <div class="avatar-pattern"></div>
+                    <div class="avatar-eyes">
+                      <div class="eye left"></div>
+                      <div class="eye right"></div>
+                    </div>
+                    <div class="avatar-center-glow"></div>
+                  </div>
+                  <div class="avatar-scanline"></div>
+                  <div class="avatar-glitch"></div>
+                  <!-- Corner brackets -->
+                  <div class="bracket top-left"></div>
+                  <div class="bracket top-right"></div>
+                  <div class="bracket bottom-left"></div>
+                  <div class="bracket bottom-right"></div>
+                  <!-- Rotating ring -->
+                  <div class="rotating-ring">
+                    <div class="ring-dot top"></div>
+                    <div class="ring-dot bottom"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Status indicator -->
+              <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span class="status-text">ONLINE</span>
+              </div>
+              <!-- Data streams -->
+              <div class="data-streams top">
+                <div class="stream"></div>
+                <div class="stream"></div>
+                <div class="stream"></div>
+                <div class="stream"></div>
+                <div class="stream"></div>
+              </div>
+              <div class="data-streams bottom">
+                <div class="stream"></div>
+                <div class="stream"></div>
+                <div class="stream"></div>
+                <div class="stream"></div>
+                <div class="stream"></div>
+              </div>
+              <!-- Holographic info panel -->
+              <div class="holo-info hidden">
+                <div class="holo-content">
+                  <div class="holo-title glitch-text">IDENTITY CONFIRMED</div>
+                  <div class="holo-clearance">CLEARANCE: LEVEL 9</div>
+                  <div class="holo-status">STATUS: HACKING</div>
+                </div>
+                <div class="holo-arrow"></div>
+              </div>
+            </div>
+
+            <!-- Name and Title -->
+            <div class="hero-info">
+              <h1 class="hero-title">
+                <span class="glitch-text" data-text="CYBER">CYBER</span>
+                <br />
+                <span class="neon-glow primary">H4CKXEL</span>
+              </h1>
+              <div class="hero-subtitle">
+                <p class="role">Software Engineer Student</p>
+                <p class="specialization">
+                  Ethical Hacking Learner
+                </p>
+              </div>
+
+              <!-- Status Indicators -->
+              <div class="status-badges">
+                <div class="status-badge success">
+                  <div class="badge-dot"></div>
+                  <span>Available for hire</span>
+                </div>
+                <div class="status-badge secondary">
+                  <div class="badge-dot"></div>
+                  <span>Remote friendly</span>
+                </div>
+              </div>
+
+              <!-- Quick Stats -->
+              <div class="stats-grid">
+                <div class="stat">
+                  <div class="stat-number primary">2+</div>
+                  <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-number secondary">10+</div>
+                  <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-number accent">3s+</div>
+                  <div class="stat-label">Security Audits</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side - Navigation -->
+          <div class="hero-right">
+            <div class="nav-buttons">
+              <button class="nav-btn active" data-section="terminal">
+                <span class="nav-icon">⌨️</span>
+                <div class="nav-content">
+                  <div class="nav-title glitch-text">TERMINAL</div>
+                  <div class="nav-description">
+                    Interactive command interface
+                  </div>
+                </div>
+              </button>
+              <button class="nav-btn" data-section="about">
+                <span class="nav-icon">👤</span>
+                <div class="nav-content">
+                  <div class="nav-title glitch-text">ABOUT</div>
+                  <div class="nav-description">Personal information</div>
+                </div>
+              </button>
+              <button class="nav-btn" data-section="skills">
+                <span class="nav-icon">🛠️</span>
+                <div class="nav-content">
+                  <div class="nav-title glitch-text">SKILLS</div>
+                  <div class="nav-description">Technical expertise</div>
+                </div>
+              </button>
+              <button class="nav-btn" data-section="experience">
+                <span class="nav-icon">💼</span>
+                <div class="nav-content">
+                  <div class="nav-title glitch-text">EXPERIENCE</div>
+                  <div class="nav-description">Career timeline</div>
+                </div>
+              </button>
+              <button class="nav-btn" data-section="contact">
+                <span class="nav-icon">📡</span>
+                <div class="nav-content">
+                  <div class="nav-title glitch-text">CONTACT</div>
+                  <div class="nav-description">Get in touch</div>
+                </div>
+              </button>
+            </div>
+
+            <!-- Quick Contact Buttons -->
+            <div class="quick-contact">
+              <a href="mailto:h4ckxel2gmail.com" class="contact-btn">
+                <div class="contact-icon">📧</div>
+                <div class="contact-label">EMAIL</div>
+              </a>
+              <a
+                href="https://github.com/h4ckxel"
+                target="_blank"
+                class="contact-btn"
+              >
+                <div class="contact-icon">🐙</div>
+                <div class="contact-label">GITHUB</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Content Sections -->
+      <div class="content-sections">
+        <!-- Terminal Section -->
+        <section id="terminal-section" class="content-section active">
+          <div class="section-container">
+            <div class="section-header">
+              <h2 class="section-title glitch-text">TERMINAL INTERFACE</h2>
+              <p class="section-description">
+                Interactive command-line interface to explore my portfolio
+              </p>
+            </div>
+
+            <div class="terminal-container">
+              <div class="terminal">
+                <!-- Terminal Header -->
+                <div class="terminal-header">
+                  <div class="terminal-controls">
+                    <div class="control-btn close"></div>
+                    <div class="control-btn minimize"></div>
+                    <div class="control-btn maximize"></div>
+                  </div>
+                  <div class="terminal-title">
+                    h4ckxel@fsociety:~/portfolio
+                  </div>
+                  <div class="terminal-time"></div>
+                </div>
+
+                <!-- Terminal Content -->
+                <div class="terminal-content" id="terminal-content">
+                  <div class="terminal-line info">
+                    Welcome to H4CKXEL Terminal v2.1.337
+                  </div>
+                  <div class="terminal-line info">
+                    Type "help" to see available commands.
+                  </div>
+                  <div class="terminal-line info"></div>
+                </div>
+
+                <!-- Terminal Input -->
+                <div class="terminal-input-line">
+                  <span class="terminal-prompt"
+                    >h4ckxel@fsociety:~/portfolio$</span
+                  >
+                  <input
+                    type="text"
+                    id="terminal-input"
+                    class="terminal-input"
+                    autocomplete="off"
+                    spellcheck="false"
+                  />
+                  <span class="terminal-cursor">▋</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="content-section">
+          <div class="section-container">
+            <div class="section-header">
+              <h2 class="section-title glitch-text">ABOUT ME</h2>
+            </div>
+
+            <div class="about-content neon-box">
+              <div class="about-text">
+                <p>
+                  I am a passionate software engineer student & ethical hacker learner who thrives at the
+                  intersection of creativity and code. With expertise spanning
+                  multiple programming languages and frameworks, I build digital
+                  experiences that push boundaries and challenge conventions.
+                </p>
+
+                <p>
+                  When I'm not crafting code, you can find me exploring the
+                  latest technologies, contributing to open source projects, or
+                  reverse-engineering complex systems. I believe in the power of
+                  technology to transform ideas into reality.
+                </p>
+              </div>
+
+              <div class="about-details">
+                <div class="detail-column">
+                  <h3 class="detail-title secondary">SPECIALIZATIONS</h3>
+                  <ul class="detail-list">
+                    <li>• Cybersecurity & Penetration Testing</li>
+                    <li>• Machine Learning & AI</li>
+                  </ul>
+                </div>
+                <div class="detail-column">
+                  <h3 class="detail-title accent">INTERESTS</h3>
+                  <ul class="detail-list">
+                    <li>• Blockchain & Web3 Technologies</li>
+                    <li>• Quantum Computing Research</li>
+                    <li>• Open Source Contributions</li>
+                    <li>• Ethical Hacking & CTF Competitions</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills-section" class="content-section">
+          <div class="section-container">
+            <div class="section-header">
+              <h2 class="section-title glitch-text">SKILL MATRIX</h2>
+              <p class="section-description">
+                Technical expertise across the full stack
+              </p>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="skill-filters">
+              <button class="filter-btn active" data-category="all">
+                ALL SKILLS
+              </button>
+              <button class="filter-btn" data-category="frontend">
+                FRONTEND
+              </button>
+              <button class="filter-btn" data-category="backend">
+                BACKEND
+              </button>
+              <button class="filter-btn" data-category="devops">DEVOPS</button>
+              <button class="filter-btn" data-category="security">
+                SECURITY
+              </button>
+              <button class="filter-btn" data-category="other">
+                EMERGING TECH
+              </button>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="skills-grid" id="skills-grid">
+              <!-- Skills will be dynamically generated by JavaScript -->
+            </div>
+
+            <!-- Legend -->
+            <div class="skills-legend">
+              <div class="legend-item">
+                <div class="legend-dot expert"></div>
+                <span>Expert (90%+)</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot advanced"></div>
+                <span>Advanced (80-89%)</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot intermediate"></div>
+                <span>Intermediate (70-79%)</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot learning"></div>
+                <span>Learning (&lt;70%)</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience-section" class="content-section">
+          <div class="section-container">
+            <div class="section-header">
+              <h2 class="section-title glitch-text">CAREER TIMELINE</h2>
+              <p class="section-description">
+                Professional journey through the digital frontier
+              </p>
+            </div>
+
+            <div class="timeline" id="timeline">
+              <!-- Timeline items will be dynamically generated by JavaScript -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section" class="content-section">
+          <div class="section-container">
+            <div class="section-header">
+              <h2 class="section-title glitch-text">CONTACT MATRIX</h2>
+            </div>
+
+            <div class="contact-content neon-box">
+              <p class="contact-intro">
+                Ready to collaborate on your next project? Let's connect through
+                secure channels.
+              </p>
+
+              <div class="contact-grid">
+                <div class="contact-methods">
+                  <h3 class="contact-subtitle secondary">SECURE CHANNELS</h3>
+
+                  <a
+                    href="mailto:hacker@cybermatrix.dev"
+                    class="contact-method primary"
+                  >
+                    <span class="method-icon">📧</span>
+                    <div class="method-info">
+                      <div class="method-title">EMAIL</div>
+                      <div class="method-details">hacker@cybermatrix.dev</div>
+                    </div>
+                  </a>
+
+                  <a
+                    href="https://github.com/cyber-hacker"
+                    target="_blank"
+                    class="contact-method secondary"
+                  >
+                    <span class="method-icon">🐙</span>
+                    <div class="method-info">
+                      <div class="method-title">GITHUB</div>
+                      <div class="method-details">@cyber-hacker</div>
+                    </div>
+                  </a>
+
+                  <a
+                    href="https://linkedin.com/in/cyber-developer"
+                    target="_blank"
+                    class="contact-method accent"
+                  >
+                    <span class="method-icon">💼</span>
+                    <div class="method-info">
+                      <div class="method-title">LINKEDIN</div>
+                      <div class="method-details">/in/cyber-developer</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="security-info">
+                  <h3 class="contact-subtitle warning">SECURITY INFO</h3>
+
+                  <div class="security-item warning">
+                    <div class="security-title">PGP KEY</div>
+                    <div class="security-details">
+                      4A1B 2C3D 4E5F 6789 ABCD EF01 2345 6789
+                    </div>
+                  </div>
+
+                  <div class="security-item success">
+                    <div class="security-title">RESPONSE TIME</div>
+                    <div class="security-details">Usually within 24 hours</div>
+                  </div>
+
+                  <div class="security-item primary">
+                    <div class="security-title">TIME ZONE</div>
+                    <div class="security-details">UTC+0 (Flexible)</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-footer">
+                <p>🔐 All communications are end-to-end encrypted</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Floating Navigation -->
+    <nav class="floating-nav">
+      <button
+        class="nav-dot active"
+        data-section="terminal"
+        title="Terminal"
+      ></button>
+      <button class="nav-dot" data-section="about" title="About"></button>
+      <button class="nav-dot" data-section="skills" title="Skills"></button>
+      <button
+        class="nav-dot"
+        data-section="experience"
+        title="Experience"
+      ></button>
+      <button class="nav-dot" data-section="contact" title="Contact"></button>
+    </nav>
+
+    <script src="script.js"></script>
+  </body>
+</html>
