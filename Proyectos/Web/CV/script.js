@@ -199,7 +199,7 @@ function initializeTerminal() {
     "• GitHub: h4ckxel — Ethical Hacking & Security Tools",
     "   • CVE-2025-2005 (Exploit PoC)",
     "     – Exploración de una vulnerabilidad crítica de carga arbitraria en plugin WordPress;",
-    "       exploit en Python (PoC) para demostrar ejecución remota. :contentReference[oaicite:0]{index=0}",
+    "       exploit en Python (PoC) para demostrar ejecución remota. https://github.com/h4ckxel/CVE-2025-2005",
     "   • cheat-sheet-Python",
     "     – Hoja de referencia en Python con ejemplos desde básicos a POO (Programación Orientada a Objetos). :contentReference[oaicite:1]{index=1}",
     "",
