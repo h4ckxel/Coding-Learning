@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/h4ckxel/Desktop/Coding-Learning/Scripts-Ejercicios/C++",
-      "program": "/home/h4ckxel/Desktop/Coding-Learning/Scripts-Ejercicios/C++/build/Debug/outDebug",
+      "cwd": ".",
+      "program": "build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
