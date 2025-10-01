@@ -49,7 +49,7 @@ int main(){
 		
 				printf("\nGracias por su compra!");
 			}
-			else{
+		else{
 				printf("\nNo tiene fondos suficientes.");
 			}; break;
 		//Caso 2: Agua
